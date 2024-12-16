@@ -1,0 +1,80 @@
+{
+  "comfyui": "9a616b81c15cec7f5ddcbc12e349f1adc03fad67",
+  "git_custom_nodes": {
+    "https://github.com/Gourieff/comfyui-reactor-node": {
+      "hash": "0576662becbadcfdf6ce6517d1d46529cc0573a7",
+      "disabled": false
+    },
+    "https://github.com/mav-rik/facerestore_cf": {
+      "hash": "67f90bc6be976fb58169866155346b0da13bebee",
+      "disabled": false
+    },
+    "https://github.com/kijai/ComfyUI-KJNodes": {
+      "hash": "973ceb6ca8b7525d54873805888ad690090d6b1e",
+      "disabled": false
+    },
+    "https://github.com/SLAPaper/ComfyUI-Image-Selector": {
+      "hash": "c16921d14d3350dc8e6db25b2f385b78f64f77bf",
+      "disabled": false
+    },
+    "https://github.com/ltdrdata/ComfyUI-Manager.git": {
+      "hash": "75047edf8ad19f4ec1171e649b6f632ff0eeb769",
+      "disabled": false
+    },
+    "https://github.com/Excidos/ComfyUI-Documents": {
+      "hash": "a18dfd0e0276ef2e42afc686cc1bbff85c8a8363",
+      "disabled": false
+    },
+    "https://github.com/jags111/efficiency-nodes-comfyui": {
+      "hash": "3ead4afd120833f3bffdefeca0d6545df8051798",
+      "disabled": false
+    },
+    "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved": {
+      "hash": "4f1344e25387d21cdded8f48f4bc59bd86bea9e8",
+      "disabled": false
+    },
+    "https://github.com/chrisgoringe/cg-use-everywhere": {
+      "hash": "cd06259166a6af4c054c62f540871ca09a359b50",
+      "disabled": false
+    },
+    "https://github.com/rgthree/rgthree-comfy": {
+      "hash": "e6ae355bb833cd25fdc1fb50642adf53372a4829",
+      "disabled": false
+    },
+    "https://github.com/bash-j/mikey_nodes": {
+      "hash": "637bc18f8e18cc662a8411efbc7013adc7845ae7",
+      "disabled": false
+    },
+    "https://github.com/ai-shizuka/ComfyUI-tbox": {
+      "hash": "3e323f747f0ec4ba5a4b544324b127061aa6711e",
+      "disabled": false
+    },
+    "https://github.com/FizzleDorf/ComfyUI_FizzNodes": {
+      "hash": "7d6ea60c55ebd1268bd76fa462da052852bff192",
+      "disabled": false
+    },
+    "https://github.com/cubiq/ComfyUI_IPAdapter_plus": {
+      "hash": "b188a6cb39b512a9c6da7235b880af42c78ccd0d",
+      "disabled": false
+    },
+    "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet": {
+      "hash": "9632af9dc8f9abe28431c0027411d7a6d4f6cd3e",
+      "disabled": false
+    },
+    "https://github.com/Fannovel16/comfyui_controlnet_aux": {
+      "hash": "5a049bde9cc117dafc327cded156459289097ea1",
+      "disabled": false
+    },
+    "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite": {
+      "hash": "6953fa21443cf55f7c3b61ed3f4c87c5d3677fe1",
+      "disabled": false
+    }
+  },
+  "file_custom_nodes": [
+    {
+      "filename": "websocket_image_save.py",
+      "disabled": false
+    }
+  ],
+  "pips": {}
+}
