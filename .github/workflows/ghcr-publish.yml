@@ -40,9 +40,9 @@ jobs:
             latest=auto
             prefix=${{ matrix.comfyui-version }},onlatest=true
           tags: |
-            type=semver,pattern=rev{{version}},prefix=-
-            type=semver,pattern=rev{{major}}.{{minor}},prefix=-
-            type=semver,pattern=rev{{major}},prefix=-
+            type=semver,pattern=-rev{{version}}
+            type=semver,pattern=-rev{{major}}.{{minor}}
+            type=semver,pattern=-rev{{major}}
             type=semver,pattern=
       - name: Build and push Docker image
         id: push
