@@ -26,7 +26,9 @@ ContainerName=systemd-%p_%i
 # Allow long timeout for image fetch
 TimeoutStartSec=600
 # Create bind-mount points for containerized ComfyUI
-ExecStartPre=mkdir -p %h/comfyui/{models,custom_nodes,input}
+ExecStartPre=mkdir -p %h/comfyui/models
+ExecStartPre=mkdir -p %h/comfyui/custom_nodes
+ExecStartPre=mkdir -p %h/comfyui/input
 ExecStartPre=mkdir -p %h/comfyui/gpu0/output
 
 [Install]
