@@ -6,7 +6,7 @@ Wants=comfyui-nginx-proxy.container
 AssertPathExists=%h
 
 [Container]
-Image=ghcr.io/pszenher/comfyui:%i
+Image=ghcr.io/pszenher/comfyui-oci:%i
 Exec=comfyui --port 8188 --listen 0.0.0.0
 # Add to internal comfyui podman network
 Network=comfyui.network
