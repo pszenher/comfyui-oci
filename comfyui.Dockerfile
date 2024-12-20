@@ -31,6 +31,15 @@ RUN test ! -f "${COMFYUI_BINARY}" && \
     printf 'exec python "%s/main.py" ${@}\n' "${COMFYUI_INSTALL_DIR}" >> "${COMFYUI_BINARY}" && \
     chmod +x "${COMFYUI_BINARY}"
 
+# `insightface` package requires install-time build, need g++
+# multiple packages require runtime libGL, need mesa
+# opencv python package requires libgthread at import-time, need glib2
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
 # Run comfy with CI flags set to for initialization and validation checks
 RUN comfyui \
     --quick-test-for-ci \
