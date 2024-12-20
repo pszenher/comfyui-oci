@@ -6,7 +6,7 @@ Wants=comfyui-nginx-proxy.container
 AssertPathExists=%h
 
 [Container]
-Image=localhost/pszenher/comfyui:%i
+Image=ghcr.io/pszenher/comfyui:%i
 Exec=comfyui --port 8188 --listen 0.0.0.0
 # Add to internal comfyui podman network
 Network=comfyui.network
@@ -23,8 +23,6 @@ Volume=%h/comfyui/gpu0/output:/opt/comfyui/output
 ContainerName=systemd-%p_%i
 
 [Service]
-# Autorestart on exit
-Restart=always
 # Allow long timeout for image fetch
 TimeoutStartSec=600
 # Create bind-mount points for containerized ComfyUI
