@@ -2,7 +2,7 @@ name: Publish Images to GitHub Container Registry
 
 on:
   push:
-    branches: ['release']
+    tags: ['*']
 
 env:
   REGISTRY: ghcr.io
