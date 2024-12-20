@@ -20,7 +20,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-      # attestations: write
+      attestations: write
       id-token: write
     steps:
       - name: Checkout repository
@@ -61,4 +61,3 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
-      
