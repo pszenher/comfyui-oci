@@ -3,7 +3,7 @@ Description=Nginx reverse-proxy container for ComfyUI instances
 
 [Container]
 Image=docker.io/nginx
-PublishPort=localhost:8080:80
+PublishPort=127.0.0.1:8080:80
 Network=comfyui.network
 Volume=./comfyui-nginx/conf.d:/etc/nginx/conf.d
 Volume=./comfyui-nginx/html:/usr/share/nginx/html
