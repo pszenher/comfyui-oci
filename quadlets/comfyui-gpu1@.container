@@ -18,6 +18,10 @@ Volume=%h/comfyui/models:/opt/comfyui/models
 Volume=%h/comfyui/custom_nodes:/opt/comfyui/custom_nodes
 Volume=%h/comfyui/input:/opt/comfyui/input
 Volume=%h/comfyui/gpu1/output:/opt/comfyui/output
+# Create persistent local volume for dynamically-installed python libs
+Volume=comfyui-gpu1-conda-%i:/opt/conda
+# Auto-update container from registry by tag at startup
+AutoUpdate=registry
 # Manually set ContainerName due to '@' symbol in templated unit
 #   backport:  https://github.com/containers/podman/issues/18705
 ContainerName=systemd-%p_%i
