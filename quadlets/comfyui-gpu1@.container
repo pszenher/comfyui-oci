@@ -1,7 +1,7 @@
 [Unit]
 Description=ComfyUI Container (gpu=1)
 # Weak dependency on comfyui-nginx-proxy
-Wants=comfyui-nginx-proxy.container
+Wants=comfyui-nginx-proxy.service
 # Require extant user home directory
 AssertPathExists=%h
 
