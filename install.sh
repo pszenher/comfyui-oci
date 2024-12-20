@@ -8,10 +8,16 @@ then
     exit 1
 fi
 
-if [[ -z "${XDG_CONFIG_HOME}" ]]
+if [[ -z "${XDG_CONFIG_HOME:-}" ]]
 then
     XDG_CONFIG_HOME="${HOME}/.config"
     >&2 echo "warn: XDG_CONFIG_HOME not set, using '${XDG_CONFIG_HOME}'"
 fi
 
-install -t "${XDG_CONFIG_HOME}/containers/systemd" ./quadlets/*
+install -t "${XDG_CONFIG_HOME}/containers/systemd" \
+	"./quadlets/comfyui-gpu0@.container" \
+	"./quadlets/comfyui-gpu1@.container" \
+	"./quadlets/comfyui.network" \
+	"./quadlets/comfyui-nginx-proxy.container"
+
+cp -vr "./quadlets/comfyui-nginx" "${XDG_CONFIG_HOME}/containers/systemd/"
