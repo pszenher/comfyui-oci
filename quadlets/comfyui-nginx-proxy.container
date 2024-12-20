@@ -1,0 +1,15 @@
+[Unit]
+Description=Nginx reverse-proxy container for ComfyUI instances
+
+[Container]
+Image=docker.io/nginx
+PublishPort=localhost:8080:80
+Network=comfyui.network
+Volume=./comfyui-nginx/conf.d:/etc/nginx/conf.d
+Volume=./comfyui-nginx/html:/usr/share/nginx/html
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

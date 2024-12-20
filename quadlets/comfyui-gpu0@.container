@@ -1,0 +1,35 @@
+[Unit]
+Description=ComfyUI Container (gpu=0)
+# Weak dependency on comfyui-nginx-proxy
+Wants=comfyui-nginx-proxy.container
+# Require extant user home directory
+AssertPathExists=%h
+
+[Container]
+Image=localhost/pszenher/comfyui:%i
+Exec=comfyui --port 8188 --listen 0.0.0.0
+# Add to internal comfyui podman network
+Network=comfyui.network
+HostName=gpu0.comfyui.internal
+# Add CUDA:0 device to container context
+AddDevice=nvidia.com/gpu=0
+# Bind-mount relevant ComfyUI directories for user access
+Volume=%h/comfyui/models:/opt/comfyui/models
+Volume=%h/comfyui/custom_nodes:/opt/comfyui/custom_nodes
+Volume=%h/comfyui/input:/opt/comfyui/input
+Volume=%h/comfyui/gpu0/output:/opt/comfyui/output
+# Manually set ContainerName due to '@' symbol in templated unit
+#   backport:  https://github.com/containers/podman/issues/18705
+ContainerName=systemd-%p_%i
+
+[Service]
+# Autorestart on exit
+Restart=always
+# Allow long timeout for image fetch
+TimeoutStartSec=600
+# Create bind-mount points for containerized ComfyUI
+ExecStartPre=mkdir -p %h/comfyui/{models,custom_nodes,input}
+ExecStartPre=mkdir -p %h/comfyui/gpu0/output
+
+[Install]
+WantedBy=default.target

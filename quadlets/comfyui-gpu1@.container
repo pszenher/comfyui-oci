@@ -1,0 +1,21 @@
+[Unit]
+Description=ComfyUI Container (gpu=1)
+
+[Container]
+ContainerName=systemd-%p_%i
+Image=localhost/pszenher/comfyui:%i
+Exec=comfyui --port 8188 --listen 0.0.0.0
+Network=comfyui.network
+HostName=gpu1.comfyui.internal
+AddDevice=nvidia.com/gpu=1
+Volume=%h/comfyui/models:/opt/comfyui/models
+Volume=%h/comfyui/custom_nodes:/opt/comfyui/custom_nodes
+Volume=%h/comfyui/input:/opt/comfyui/input
+Volume=%h/comfyui/gpu1/output:/opt/comfyui/output
+
+[Service]
+ExecStartPre=mkdir -p %h/comfyui/{models,custom_nodes,input}
+ExecStartPre=mkdir -p %h/comfyui/gpu1/output
+
+[Install]
+WantedBy=default.target
