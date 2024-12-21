@@ -1,0 +1,22 @@
+[Unit]
+Description=File-Browser Management Interface for ComfyUI Instances
+# Weak dependency on comfyui-nginx-proxy
+Wants=comfyui-nginx-proxy.service
+# Require extant user home directory
+AssertPathExists=%h
+
+[Container]
+Image=docker.io/filebrowser/filebrowser:latest
+Network=comfyui.network
+HostName=files.comfyui.internal
+# Bind-mount custom settings file to well-known location
+Volume=./comfyui-filebrowser/settings.json:/.filebrowser.json
+# Bind-mount comfyui directory to file-serving root
+Volume=%h/comfyui:/srv
+
+[Service]
+# Create comfyui directory in user home if it doesn't yet exist
+ExecStartPre=mkdir -p %h/comfyui
+
+[Install]
+WantedBy=default.target

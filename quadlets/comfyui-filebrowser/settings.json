@@ -1,0 +1,10 @@
+{
+  "port": 80,
+  "baseURL": "",
+  "address": "",
+  "log": "stdout",
+  "database": "/filebrowser.db",
+  "root": "/srv",
+  "auth.method": "noauth",
+  "branding.name": "ComfyUI File Browser"
+}
